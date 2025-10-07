@@ -1,9 +1,6 @@
 {
   "name": "@rubenlangeweg/n8n-nodes-incidentio",
   "version": "0.1.0",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "description": "n8n node for incident.io API integration",
   "keywords": [
     "n8n-community-node-package",
