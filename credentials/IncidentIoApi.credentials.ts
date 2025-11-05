@@ -19,6 +19,14 @@ export class IncidentIoApi implements ICredentialType {
 			required: true,
 			description: 'API key for incident.io. Create one at https://app.incident.io/settings/api-keys',
 		},
+		{
+			displayName: 'Webhook Secret',
+			name: 'webhookSecret',
+			type: 'string',
+			typeOptions: { password: true },
+			default: '',
+			description: 'Webhook signing secret for verifying webhook signatures (optional, but recommended for security)',
+		},
 	];
 
 	authenticate: IAuthenticateGeneric = {

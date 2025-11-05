@@ -1,0 +1,597 @@
+[
+    {
+      "schedule_entries": {
+        "scheduled": [
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T06:00:00Z",
+            "end_at": "2025-10-01T20:00:00Z",
+            "fingerprint": "2a82d1f70a9f22bb04d55fde7cc1da1d"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T06:00:00Z",
+            "end_at": "2025-10-02T20:00:00Z",
+            "fingerprint": "95fff5cd350dca090b56806fb2bd97a6"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T06:00:00Z",
+            "end_at": "2025-10-03T20:00:00Z",
+            "fingerprint": "99ec5530e0301c2d650ee5e2c74f45e2"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-04T06:00:00Z",
+            "end_at": "2025-10-04T18:00:00Z",
+            "fingerprint": "ccc004f67044eb57ff15f0c0e29844d7"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-05T06:00:00Z",
+            "end_at": "2025-10-05T18:00:00Z",
+            "fingerprint": "43ca6f888eb6db0e732c568d1e5d2cda"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T06:00:00Z",
+            "end_at": "2025-10-06T20:00:00Z",
+            "fingerprint": "f1ed42e9dcb2a0b13ebdb10bf6ba7abb"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T06:00:00Z",
+            "end_at": "2025-10-07T20:00:00Z",
+            "fingerprint": "13b2a68fc41bc484574a1c28082489bb"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T06:00:00Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "5aacb39a3fb6e7f207f0d49e0bc1e214"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T06:00:00Z",
+            "end_at": "2025-10-01T20:00:00Z",
+            "fingerprint": "5cdecf81ea98bc9b0c0d92d55cdebb13"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T06:00:00Z",
+            "end_at": "2025-10-02T20:00:00Z",
+            "fingerprint": "7891b867a06f2b36f3c8f19f0dd9b473"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T06:00:00Z",
+            "end_at": "2025-10-03T20:00:00Z",
+            "fingerprint": "1179d772879ddc2f1c0fe3ac4cc8dad0"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-04T06:00:00Z",
+            "end_at": "2025-10-04T18:00:00Z",
+            "fingerprint": "90452c6962e482a573eac4bdf7f507f4"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-05T06:00:00Z",
+            "end_at": "2025-10-05T18:00:00Z",
+            "fingerprint": "3d4c83c34612b2e2f9cdcbe5d99f6c46"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T06:00:00Z",
+            "end_at": "2025-10-06T20:00:00Z",
+            "fingerprint": "5a9851a979e8eb84418fce451bb0c362"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T06:00:00Z",
+            "end_at": "2025-10-07T20:00:00Z",
+            "fingerprint": "d0fd50cc874aac07b28f25a2684e3a74"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T06:00:00Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "2f8be43343e1306e4c59a9e3abae7e9f"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T07:00:00Z",
+            "end_at": "2025-10-01T15:00:00Z",
+            "fingerprint": "32e36c76adcec8fbad856190363a68b3"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T07:00:00Z",
+            "end_at": "2025-10-02T15:00:00Z",
+            "fingerprint": "9a774a6388587c4073f4cbac53277c5a"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T07:00:00Z",
+            "end_at": "2025-10-03T15:00:00Z",
+            "fingerprint": "63c9d91c36eefac1928afc61b4fbfdef"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T07:00:00Z",
+            "end_at": "2025-10-06T15:00:00Z",
+            "fingerprint": "cd9edf141f07586d12e3d01b928f8a4c"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T07:00:00Z",
+            "end_at": "2025-10-07T15:00:00Z",
+            "fingerprint": "3aac3fbace162d3147989a61caf55861"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T07:00:00Z",
+            "end_at": "2025-10-08T15:00:00Z",
+            "fingerprint": "47d2a4f95f26b751b168d1caf330aafe"
+          }
+        ],
+        "overrides": [
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-09-29T07:00:00Z",
+            "end_at": "2025-10-10T15:00:00Z",
+            "fingerprint": "84d1491bcf8ff6ae3fbd1b548a3e1731"
+          }
+        ],
+        "final": [
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T07:00:01.893Z",
+            "end_at": "2025-10-01T20:00:00Z",
+            "fingerprint": "00ef5a2208650645a2cec69bfca627ff"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T06:00:00Z",
+            "end_at": "2025-10-02T20:00:00Z",
+            "fingerprint": "95fff5cd350dca090b56806fb2bd97a6"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T06:00:00Z",
+            "end_at": "2025-10-03T20:00:00Z",
+            "fingerprint": "99ec5530e0301c2d650ee5e2c74f45e2"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-04T06:00:00Z",
+            "end_at": "2025-10-04T18:00:00Z",
+            "fingerprint": "ccc004f67044eb57ff15f0c0e29844d7"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-05T06:00:00Z",
+            "end_at": "2025-10-05T18:00:00Z",
+            "fingerprint": "43ca6f888eb6db0e732c568d1e5d2cda"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T06:00:00Z",
+            "end_at": "2025-10-06T20:00:00Z",
+            "fingerprint": "f1ed42e9dcb2a0b13ebdb10bf6ba7abb"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T06:00:00Z",
+            "end_at": "2025-10-07T20:00:00Z",
+            "fingerprint": "13b2a68fc41bc484574a1c28082489bb"
+          },
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T06:00:00Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "5aacb39a3fb6e7f207f0d49e0bc1e214"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+              "name": "Gloria",
+              "email": "gloria@rb2.nl",
+              "slack_user_id": "U08T23FV7U4",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T07:00:01.893Z",
+            "end_at": "2025-10-01T20:00:00Z",
+            "fingerprint": "1a1743cbf72710d5ec9e007be478d588"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T06:00:00Z",
+            "end_at": "2025-10-02T20:00:00Z",
+            "fingerprint": "e4c11ac367e1c90d6d16d4e139ad1441"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T06:00:00Z",
+            "end_at": "2025-10-03T20:00:00Z",
+            "fingerprint": "508803a428559a19b5b42d7691b0fab5"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-04T06:00:00Z",
+            "end_at": "2025-10-04T18:00:00Z",
+            "fingerprint": "8280937944d8d3c81c812e225a032402"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-05T06:00:00Z",
+            "end_at": "2025-10-05T18:00:00Z",
+            "fingerprint": "c21c8ebdc10caf5a6421f2362351c8fe"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T06:00:00Z",
+            "end_at": "2025-10-06T20:00:00Z",
+            "fingerprint": "c7da7c6957eee17e4be4c12555b6c8b8"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T06:00:00Z",
+            "end_at": "2025-10-07T20:00:00Z",
+            "fingerprint": "d0fd50cc874aac07b28f25a2684e3a74"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T06:00:00Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "2f8be43343e1306e4c59a9e3abae7e9f"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-01T07:00:01.893Z",
+            "end_at": "2025-10-01T15:00:00Z",
+            "fingerprint": "d6b7766c3a28de69c16cf4c5858d58fa"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-02T07:00:00Z",
+            "end_at": "2025-10-02T15:00:00Z",
+            "fingerprint": "9a774a6388587c4073f4cbac53277c5a"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-03T07:00:00Z",
+            "end_at": "2025-10-03T15:00:00Z",
+            "fingerprint": "63c9d91c36eefac1928afc61b4fbfdef"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-06T07:00:00Z",
+            "end_at": "2025-10-06T15:00:00Z",
+            "fingerprint": "cd9edf141f07586d12e3d01b928f8a4c"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-07T07:00:00Z",
+            "end_at": "2025-10-07T15:00:00Z",
+            "fingerprint": "3aac3fbace162d3147989a61caf55861"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T07:00:00Z",
+            "end_at": "2025-10-08T15:00:00Z",
+            "fingerprint": "47d2a4f95f26b751b168d1caf330aafe"
+          }
+        ]
+      }
+    }
+  ]

@@ -1,0 +1,91 @@
+{
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        -128
+      ],
+      "id": "ee84becb-b1bc-4146-8a88-e50c3f9b22f1",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "limit": 100,
+        "additionalFields": {
+          "bookingType": "event"
+        },
+        "requestOptions": {}
+      },
+      "type": "@rubenlangeweg/n8n-nodes-productive.productive",
+      "typeVersion": 1,
+      "position": [
+        96,
+        0
+      ],
+      "id": "8df0313a-52b4-4869-83a1-765ea6dcfaed",
+      "name": "List bookings",
+      "credentials": {
+        "productiveApi": {
+          "id": "6Xr74kWZqexqkDIh",
+          "name": "Productive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "scheduleEntry",
+        "schedule_id": "01JRT0A1CKDA1HKK4NSWN6FYME",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "@rubenlangeweg/n8n-nodes-incidentio.incidentIo",
+      "typeVersion": 1,
+      "position": [
+        112,
+        -224
+      ],
+      "id": "d8271869-b031-4058-9955-84953b3ad392",
+      "name": "List schedule entries",
+      "credentials": {
+        "incidentIoApi": {
+          "id": "ucCRkCMO2tm0WLT3",
+          "name": "incident.io account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "List schedule entries",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List bookings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ad83ebed-f7f7-42bb-b0ee-5d81ab1391c3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5ae08e81c1c4cbd678917e884ea4b9f729e5a7ac5e563399bab40ff74a3ec208"
+  },
+  "id": "mvPLNmu0qjFjDVld",
+  "tags": []
+}

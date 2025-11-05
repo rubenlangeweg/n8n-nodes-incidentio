@@ -1,6 +1,6 @@
 {
   "name": "@rubenlangeweg/n8n-nodes-incidentio",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "n8n node for incident.io API integration",
   "keywords": [
     "n8n-community-node-package",
@@ -37,10 +37,12 @@
       "dist/credentials/IncidentIoApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/IncidentIo/IncidentIo.node.js"
+      "dist/nodes/IncidentIo/IncidentIo.node.js",
+      "dist/nodes/IncidentIo/IncidentIoTrigger.node.js"
     ]
   },
   "devDependencies": {
+    "@types/node": "^24.7.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.15.0",
     "eslint": "^8.56.0",

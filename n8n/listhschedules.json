@@ -1,0 +1,931 @@
+[
+  {
+    "schedules": [
+      {
+        "id": "01JPQXQBV0FX0W1RWP0TERERX6",
+        "name": "First line BE + FE",
+        "timezone": "Europe/Amsterdam",
+        "team_ids": [
+          "01JPQWWDYM1RVQDXG5Z0ZAG3HW"
+        ],
+        "holidays_public_config": {
+          "country_codes": [
+            "NL",
+            "PT",
+            "NG"
+          ]
+        },
+        "config": {
+          "rotations": [
+            {
+              "id": "01JPQXMHS2FQNJCDBZVKPB317S",
+              "name": "Rotation",
+              "layers": [
+                {
+                  "id": "01JPQXQBWR25PGEFD9BCGGJV1B",
+                  "name": ""
+                },
+                {
+                  "id": "01JS1Q15ZWZYX845R1NPSASHT3",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JRTMD23EYGVMHN4MT6M7NNV2",
+                  "name": "Daniel Cunha",
+                  "email": "daniel.cunha@rb2.pt",
+                  "slack_user_id": "U08N71HGJ1J",
+                  "role": "viewer"
+                },
+                {
+                  "id": "01JRTF2715C4JT9KYAKCNR76PX",
+                  "name": "Nuno Dias",
+                  "email": "nuno.dias@rb2.pt",
+                  "slack_user_id": "U08NRP5JGGG",
+                  "role": "responder"
+                },
+                {
+                  "id": "01JRTF26DCTRWVMWZAWHA01F65",
+                  "name": "Ricardo Silva",
+                  "email": "ricardo.silva@rb2.pt",
+                  "slack_user_id": "U08NRP74K88",
+                  "role": "viewer"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-03-19T08:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JPQXMHS2FQNJCDBZVKPB317S",
+              "name": "Rotation BE",
+              "layers": [
+                {
+                  "id": "01JPQXQBWR25PGEFD9BCGGJV1B",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JV1TN5BBW48MN6CFPVXVAPH8",
+                  "name": "AbdulGafar Olamide Ajao",
+                  "email": "AbdulGafar@rb2.ng",
+                  "slack_user_id": "U08S0JQ1152",
+                  "role": "responder"
+                },
+                {
+                  "id": "01JRTF2715C4JT9KYAKCNR76PX",
+                  "name": "Nuno Dias",
+                  "email": "nuno.dias@rb2.pt",
+                  "slack_user_id": "U08NRP5JGGG",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-05-07T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "effective_from": "2025-05-21T06:00:00Z",
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JPQXMHS2FQNJCDBZVKPB317S",
+              "name": "Rotation BE",
+              "layers": [
+                {
+                  "id": "01JPQXQBWR25PGEFD9BCGGJV1B",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JRTF2715C4JT9KYAKCNR76PX",
+                  "name": "Nuno Dias",
+                  "email": "nuno.dias@rb2.pt",
+                  "slack_user_id": "U08NRP5JGGG",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-05-07T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "effective_from": "2025-08-06T23:00:00Z",
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+              "name": "Rotation FE",
+              "layers": [
+                {
+                  "id": "01JVKTGJ5BK5VBR4CSAX16B340",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+                  "name": "gk",
+                  "email": "gk@rb2.nl",
+                  "slack_user_id": "U08MYCSFR9T",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-05-20T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+              "name": "Rotation FE",
+              "layers": [
+                {
+                  "id": "01JVKTGJ5BK5VBR4CSAX16B340",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+                  "name": "gk",
+                  "email": "gk@rb2.nl",
+                  "slack_user_id": "U08MYCSFR9T",
+                  "role": "responder"
+                },
+                {
+                  "id": "01JVKTPSYNDFMV83HCRV10HX3C",
+                  "name": "Gloria",
+                  "email": "gloria@rb2.nl",
+                  "slack_user_id": "U08T23FV7U4",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-05-20T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "effective_from": "2025-07-03T01:45:00Z",
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+              "name": "Shadow",
+              "layers": [
+                {
+                  "id": "01JVM3HHP3F2XX64PZTG7ZC1ZV",
+                  "name": ""
+                }
+              ],
+              "users": [],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-05-20T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "scheduling_mode": "fair"
+            },
+            {
+              "id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+              "name": "Shadow",
+              "layers": [
+                {
+                  "id": "01JVM3HHP3F2XX64PZTG7ZC1ZV",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+                  "name": "Maylinn Kwakman",
+                  "email": "maylinn@rb2.nl",
+                  "slack_user_id": "U094PMNBW84",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "09:00",
+                  "end_time": "17:00"
+                }
+              ],
+              "handover_start_at": "2025-05-20T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ],
+              "effective_from": "2025-08-06T23:00:00Z",
+              "scheduling_mode": "fair"
+            }
+          ]
+        },
+        "current_shifts": [
+          {
+            "rotation_id": "01JPQXMHS2FQNJCDBZVKPB317S",
+            "user": {
+              "id": "01JRTF2715C4JT9KYAKCNR76PX",
+              "name": "Nuno Dias",
+              "email": "nuno.dias@rb2.pt",
+              "slack_user_id": "U08NRP5JGGG",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T07:00:02.441Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "3583c53049920c77a808ca7150c92ba7"
+          },
+          {
+            "rotation_id": "01JVKQHFTMQZSA4Z1QSXZS95YM",
+            "user": {
+              "id": "01JRSK3KTQPJKCMFRFWARWNC9P",
+              "name": "gk",
+              "email": "gk@rb2.nl",
+              "slack_user_id": "U08MYCSFR9T",
+              "role": "administrator"
+            },
+            "start_at": "2025-10-08T07:00:02.441Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "e0eee666a281731653317071df8a45f9"
+          },
+          {
+            "rotation_id": "01JVM3DTRFWZZZD5BV36VB8GH2",
+            "user": {
+              "id": "01JZJF0D7AJK41HPTA5MYJC74W",
+              "name": "Maylinn Kwakman",
+              "email": "maylinn@rb2.nl",
+              "slack_user_id": "U094PMNBW84",
+              "role": "responder"
+            },
+            "start_at": "2025-10-08T07:00:02.441Z",
+            "end_at": "2025-10-08T15:00:00Z",
+            "fingerprint": "485db4afac52c7dbe575ad1009528cbf"
+          }
+        ],
+        "created_at": "2025-03-19T19:22:45.004Z",
+        "updated_at": "2025-10-08T07:00:04.43Z",
+        "annotations": {}
+      },
+      {
+        "id": "01JRT0A1CKDA1HKK4NSWN6FYME",
+        "name": "Second line",
+        "timezone": "Europe/Amsterdam",
+        "team_ids": [
+          "01JQ6AGZ16J4TD3BWR0S1N2JPE"
+        ],
+        "holidays_public_config": {
+          "country_codes": [
+            "NL"
+          ]
+        },
+        "config": {
+          "rotations": [
+            {
+              "id": "01JRT07TGJP1JFZGTKKYKT1AE9",
+              "name": "Rotation Tech Lead",
+              "layers": [
+                {
+                  "id": "01JRT0A1DK2W08VAHHRBWBMSXV",
+                  "name": ""
+                }
+              ],
+              "users": [
+                {
+                  "id": "01J6YN3TXJ0H3TZBMKGZMWG9N8",
+                  "name": "Carlo Kok",
+                  "email": "carlo@rb2.nl",
+                  "slack_user_id": "U07KUE9N4EP",
+                  "role": "responder"
+                },
+                {
+                  "id": "01JPQFHQ1A78FM86SR8AP32AJ1",
+                  "name": "Ruben",
+                  "email": "ruben@rb2.nl",
+                  "slack_user_id": "U07UG961280",
+                  "role": "responder"
+                }
+              ],
+              "working_interval": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "working_intervals": [
+                {
+                  "weekday": "monday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "tuesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "wednesday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "thursday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "friday",
+                  "start_time": "08:00",
+                  "end_time": "22:00"
+                },
+                {
+                  "weekday": "saturday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                },
+                {
+                  "weekday": "sunday",
+                  "start_time": "08:00",
+                  "end_time": "20:00"
+                }
+              ],
+              "handover_start_at": "2025-04-14T06:00:00Z",
+              "handovers": [
+                {
+                  "interval_type": "weekly",
+                  "interval": 1
+                }
+              ]
+            }
+          ]
+        },
+        "current_shifts": [
+          {
+            "rotation_id": "01JRT07TGJP1JFZGTKKYKT1AE9",
+            "user": {
+              "id": "01JPQFHQ1A78FM86SR8AP32AJ1",
+              "name": "Ruben",
+              "email": "ruben@rb2.nl",
+              "slack_user_id": "U07UG961280",
+              "role": "owner"
+            },
+            "start_at": "2025-10-08T06:00:00.316Z",
+            "end_at": "2025-10-08T20:00:00Z",
+            "fingerprint": "a9bb324027f597de37c53e3b94626db3"
+          }
+        ],
+        "created_at": "2025-04-14T11:17:46.536Z",
+        "updated_at": "2025-10-08T06:00:01.663Z",
+        "annotations": {}
+      }
+    ],
+    "pagination_meta": {
+      "page_size": 25,
+      "total_record_count": 2,
+      "after": "01JRT0A1CKDA1HKK4NSWN6FYME"
+    }
+  }
+]

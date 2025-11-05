@@ -1,0 +1,521 @@
+{
+  "name": "Productive and Incident.io planning checker",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -656,
+        304
+      ],
+      "id": "b04deb69-d80a-4520-8ab9-5e9979102e2b",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "limit": 100,
+        "additionalFields": {
+          "bookingType": "event",
+          "after": "={{ $today.toFormat('yyyy-MM-dd') }}T00:00:00",
+          "before": "={{ $today.plus({ weeks: 2 }).toFormat('yyyy-MM-dd') }}T23:59:59",
+          "include": [
+            "person"
+          ]
+        },
+        "requestOptions": {}
+      },
+      "type": "@rubenlangeweg/n8n-nodes-productive.productive",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        48
+      ],
+      "id": "80a23dfc-f034-4afd-8e77-e0c3b1bcb85b",
+      "name": "List bookings",
+      "credentials": {
+        "productiveApi": {
+          "id": "6Xr74kWZqexqkDIh",
+          "name": "Productive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "schedule",
+        "additionalFields": {
+          "page_size": 250
+        },
+        "requestOptions": {}
+      },
+      "type": "@rubenlangeweg/n8n-nodes-incidentio.incidentIo",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        528
+      ],
+      "id": "1a29a8b8-7d43-431a-8c12-f68e60ef5f2f",
+      "name": "List schedules",
+      "credentials": {
+        "incidentIoApi": {
+          "id": "ucCRkCMO2tm0WLT3",
+          "name": "incident.io account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Split schedules array into individual items\nconst response = $input.first().json;\nconst schedules = response.schedules || [];\n\nconsole.log(`=== SCHEDULE RETRIEVAL ===`);\nconsole.log(`Total schedules found: ${schedules.length}`);\nconsole.log(`Has pagination info: ${!!response.pagination_meta}`);\n\nif (response.pagination_meta) {\n  console.log(`Pagination: page_size=${response.pagination_meta.page_size}, total_record_count=${response.pagination_meta.total_record_count}`);\n  if (response.pagination_meta.after) {\n    console.warn(`⚠️ WARNING: More schedules available! Use 'after' parameter for next page`);\n  }\n}\n\nschedules.forEach((schedule, idx) => {\n  console.log(`${idx + 1}. ${schedule.name} (ID: ${schedule.id})`);\n});\n\n// Return each schedule as a separate item\nreturn schedules.map(schedule => ({\n  json: schedule\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -336,
+        528
+      ],
+      "id": "fca7c4ed-e510-4162-9d73-5bc63b6f565f",
+      "name": "Split Schedules"
+    },
+    {
+      "parameters": {
+        "resource": "scheduleEntry",
+        "schedule_id": "={{ $json.id }}",
+        "additionalFields": {
+          "from": "={{ $today.toISO() }}",
+          "to": "={{ $today.plus({ weeks: 2 }).toISO() }}",
+          "page_size": 250
+        },
+        "requestOptions": {}
+      },
+      "type": "@rubenlangeweg/n8n-nodes-incidentio.incidentIo",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        528
+      ],
+      "id": "f1845bf2-d079-4cc1-8000-72e776c9d2d8",
+      "name": "List schedule entries",
+      "credentials": {
+        "incidentIoApi": {
+          "id": "ucCRkCMO2tm0WLT3",
+          "name": "incident.io account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all schedule entries from all schedules into a single response\nconst allScheduleEntries = [];\nconst today = new Date();\nconst twoWeeksLater = new Date(today);\ntwoWeeksLater.setDate(today.getDate() + 14);\n\nconsole.log(`=== SCHEDULE ENTRIES AGGREGATION ===`);\nconsole.log(`Date range: ${today.toISOString().split('T')[0]} to ${twoWeeksLater.toISOString().split('T')[0]}`);\nconsole.log(`Processing ${$input.all().length} schedule(s)`);\n\n// Collect all schedule entries from all inputs\n$input.all().forEach((item, idx) => {\n  const entries = item.json?.schedule_entries?.final || \n                  item.json?.schedule_entries?.scheduled || \n                  [];\n  console.log(`  Schedule ${idx + 1}: ${entries.length} entries`);\n  \n  // Log date range of entries for this schedule\n  if (entries.length > 0) {\n    const dates = entries.map(e => e.start_at).sort();\n    const firstDate = dates[0].split('T')[0];\n    const lastDate = dates[dates.length - 1].split('T')[0];\n    console.log(`    Range: ${firstDate} to ${lastDate}`);\n  }\n  \n  allScheduleEntries.push(...entries);\n});\n\nconsole.log(`Total aggregated: ${allScheduleEntries.length} schedule entries`);\n\n// Return in the same format as the API would\nreturn [{\n  json: {\n    schedule_entries: {\n      final: allScheduleEntries\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -32,
+        528
+      ],
+      "id": "deb08f6f-e140-4df5-9fae-8c8015321f53",
+      "name": "Aggregate Schedule Entries"
+    },
+    {
+      "parameters": {
+        "jsCode": "// DEBUG: Log all inputs\nconsole.log('=== DEBUGGING INPUT DATA ===');\nconsole.log('Total inputs:', $input.all().length);\n$input.all().forEach((input, idx) => {\n  console.log(`\\nInput ${idx}:`);\n  console.log('- Has json.data:', !!input.json?.data);\n  console.log('- json.data length:', input.json?.data?.length);\n  console.log('- First item type:', input.json?.data?.[0]?.type);\n  console.log('- Has schedule_entries:', !!input.json?.schedule_entries);\n  console.log('- Has included:', !!input.json?.included);\n  console.log('- Keys:', Object.keys(input.json || {}));\n});\n\n// Get data from both inputs\nconst bookingsInput = $input.all().find(i => i.json.data && i.json.data[0]?.type === 'bookings');\nconst scheduleInput = $input.all().find(i => i.json.schedule_entries);\n\nconsole.log('\\n=== MATCHED INPUTS ===');\nconsole.log('Bookings input found:', !!bookingsInput);\nconsole.log('Schedule input found:', !!scheduleInput);\n\nconst bookings = bookingsInput?.json?.data || [];\nconst includedPeople = bookingsInput?.json?.included || [];\nconst scheduleData = scheduleInput?.json || {};\n\nconsole.log('\\n=== EXTRACTED DATA ===');\nconsole.log('Bookings:', bookings.length);\nconsole.log('Included people:', includedPeople.length);\nconsole.log('Schedule data keys:', Object.keys(scheduleData));\n\n// Extract schedule entries (use final to include overrides, fallback to scheduled)\nconst scheduleEntries = scheduleData.schedule_entries?.final ||\n                        scheduleData.schedule_entries?.scheduled ||\n                        scheduleData.scheduled ||\n                        [];\n\n// Create a map of people by email from included data\nconst peopleByEmail = {};\nincludedPeople.forEach(person => {\n  if (person.type === 'people') {\n    const email = person.attributes?.email;\n    if (email) {\n      peopleByEmail[email.toLowerCase()] = person;\n    }\n  }\n});\n\n// Create a map of bookings by person ID (only approved bookings)\nconst bookingsByPersonId = {};\nbookings.forEach(booking => {\n  // Only include approved bookings (not rejected or canceled)\n  const attrs = booking.attributes;\n  if (attrs.approved && !attrs.rejected && !attrs.canceled) {\n    const personId = booking.relationships?.person?.data?.id;\n    if (personId) {\n      if (!bookingsByPersonId[personId]) {\n        bookingsByPersonId[personId] = [];\n      }\n      bookingsByPersonId[personId].push(booking);\n    }\n  }\n});\n\n// Helper: Format date\nfunction formatDate(dateStr) {\n  const d = new Date(dateStr);\n  return d.toISOString().split('T')[0];\n}\n\n// Helper: Format datetime\nfunction formatDateTime(dateStr) {\n  const d = new Date(dateStr);\n  return d.toISOString().replace('T', ' ').substring(0, 16);\n}\n\n// Function to check if date ranges overlap\nfunction dateRangesOverlap(start1, end1, start2, end2) {\n  const s1 = new Date(start1);\n  const e1 = new Date(end1);\n  const s2 = new Date(start2);\n  const e2 = new Date(end2);\n  return s1 <= e2 && s2 <= e1;\n}\n\n// Group schedule entries by date\nconst scheduleByDate = {};\nscheduleEntries.forEach(entry => {\n  const date = formatDate(entry.start_at);\n  if (!scheduleByDate[date]) {\n    scheduleByDate[date] = [];\n  }\n  scheduleByDate[date].push(entry);\n});\n\n// Find conflicts and build detailed summary\nconst conflicts = [];\nconst dailySummaries = [];\nconst checkedPeople = new Set();\n\nObject.keys(scheduleByDate).sort().forEach(date => {\n  const dayEntries = scheduleByDate[date];\n  const dayConflicts = [];\n  const onCallPeople = [];\n  \n  dayEntries.forEach(entry => {\n    const userEmail = entry.user?.email?.toLowerCase();\n    if (!userEmail) return;\n    \n    checkedPeople.add(entry.user.name);\n    \n    // Find matching person in Productive\n    const person = peopleByEmail[userEmail];\n    const personId = person?.id;\n    const personBookings = personId ? (bookingsByPersonId[personId] || []) : [];\n    \n    // Check for holiday conflicts\n    const hasConflict = personBookings.some(booking => {\n      const bookingStart = booking.attributes.started_on;\n      const bookingEnd = booking.attributes.ended_on;\n      const scheduleStart = entry.start_at;\n      const scheduleEnd = entry.end_at;\n      \n      if (dateRangesOverlap(bookingStart, bookingEnd, scheduleStart, scheduleEnd)) {\n        conflicts.push({\n          date: date,\n          person_name: entry.user.name,\n          person_email: entry.user.email,\n          slack_user_id: entry.user.slack_user_id,\n          booking_start: bookingStart,\n          booking_end: bookingEnd,\n          schedule_start: scheduleStart,\n          schedule_end: scheduleEnd,\n          booking_note: booking.attributes.note || 'No note',\n          rotation_id: entry.rotation_id\n        });\n        dayConflicts.push(entry.user.name);\n        return true;\n      }\n      return false;\n    });\n    \n    onCallPeople.push({\n      name: entry.user.name,\n      email: entry.user.email,\n      shift: `${formatDateTime(entry.start_at)} - ${formatDateTime(entry.end_at)}`,\n      has_conflict: hasConflict,\n      holiday_count: personBookings.length\n    });\n  });\n  \n  dailySummaries.push({\n    date: date,\n    on_call_count: onCallPeople.length,\n    conflict_count: dayConflicts.length,\n    on_call_people: onCallPeople,\n    conflicts: dayConflicts\n  });\n});\n\n// Build summary message\nconst today = new Date();\nconst twoWeeksLater = new Date(today);\ntwoWeeksLater.setDate(today.getDate() + 14);\nconst dateRange = `${formatDate(today)} to ${formatDate(twoWeeksLater)}`;\n\nlet summaryLines = [\n  '=== ON-CALL HOLIDAY CONFLICT CHECK ===',\n  `📅 Checking period: ${dateRange}`,\n  '',\n  `📊 Summary:`,\n  `- Total people checked: ${checkedPeople.size}`,\n  `- Total bookings (holidays): ${bookings.length}`,\n  `- Total schedule entries: ${scheduleEntries.length}`,\n  `- Days with on-call shifts: ${Object.keys(scheduleByDate).length}`,\n  `- Conflicts found: ${conflicts.length}`,\n  ''\n];\n\n// Add daily breakdown\nsummaryLines.push('📅 Daily Breakdown:');\ndailySummaries.forEach(day => {\n  summaryLines.push(`\\n${day.date}:`);\n  summaryLines.push(`  On-call: ${day.on_call_count} person(s)`);\n  \n  day.on_call_people.forEach(person => {\n    const status = person.has_conflict ? '⚠️ CONFLICT' : '✅ OK';\n    summaryLines.push(`    - ${person.name} (${person.shift}) ${status}`);\n    if (person.holiday_count > 0) {\n      summaryLines.push(`      Has ${person.holiday_count} holiday booking(s)`);\n    }\n  });\n});\n\n// Add conflict details\nif (conflicts.length > 0) {\n  summaryLines.push('\\n⚠️ CONFLICTS DETECTED:');\n  conflicts.forEach((conflict, idx) => {\n    summaryLines.push(`\\n${idx + 1}. ${conflict.person_name} (${conflict.person_email})`);\n    summaryLines.push(`   Holiday: ${conflict.booking_start} to ${conflict.booking_end}`);\n    summaryLines.push(`   On-call: ${formatDateTime(conflict.schedule_start)} to ${formatDateTime(conflict.schedule_end)}`);\n    summaryLines.push(`   Note: ${conflict.booking_note}`);\n  });\n} else {\n  summaryLines.push('\\n✅ No conflicts detected - all on-call schedules are clear!');\n}\n\nconst summary = summaryLines.join('\\n');\n\n// Return single output with summary and conflicts\nreturn [{\n  json: {\n    summary: summary,\n    has_conflicts: conflicts.length > 0,\n    conflict_count: conflicts.length,\n    total_people_checked: checkedPeople.size,\n    total_bookings: bookings.length,\n    total_schedule_entries: scheduleEntries.length,\n    daily_summaries: dailySummaries,\n    conflicts: conflicts\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        304
+      ],
+      "id": "cc860fab-8bb4-4a63-9482-dc127c4c97f0",
+      "name": "Detect Conflicts"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "conflict-check",
+              "leftValue": "={{ $json.conflict_count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        608,
+        304
+      ],
+      "id": "98d8ba8a-4d08-4a7b-8284-886a9c5bb8cf",
+      "name": "Has Conflicts?"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        192,
+        304
+      ],
+      "id": "e6408c37-9bf0-44ed-8436-44caade0393f",
+      "name": "Wait for All Data"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary_output",
+              "name": "summary_text",
+              "value": "={{ $json.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "conflict_count",
+              "name": "conflict_count",
+              "value": "={{ $json.conflict_count }}",
+              "type": "number"
+            },
+            {
+              "id": "people_checked",
+              "name": "people_checked",
+              "value": "={{ $json.total_people_checked }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        464
+      ],
+      "id": "6ccdf16d-b08d-47c2-9307-ba3053444797",
+      "name": "Show Summary (No Conflicts)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary_output",
+              "name": "summary_text",
+              "value": "={{ $json.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "conflict_count",
+              "name": "conflict_count",
+              "value": "={{ $json.conflict_count }}",
+              "type": "number"
+            },
+            {
+              "id": "people_checked",
+              "name": "people_checked",
+              "value": "={{ $json.total_people_checked }}",
+              "type": "number"
+            },
+            {
+              "id": "conflicts_detail",
+              "name": "conflicts",
+              "value": "={{ JSON.stringify($json.conflicts) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        144
+      ],
+      "id": "52e42bc1-1270-4802-b8e3-52ee6aba7353",
+      "name": "Show Summary (With Conflicts)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\n\n// Safety check - this node should only run when there ARE conflicts\nif (data.conflict_count === 0 || !data.conflicts || data.conflicts === '[]') {\n  throw new Error('Format Conflicts Message node triggered with 0 conflicts - check IF node condition');\n}\n\n// Helper: Format date nicely\nfunction formatDate(dateStr) {\n  const d = new Date(dateStr);\n  return d.toISOString().split('T')[0];\n}\n\n// Helper: Format datetime for time\nfunction formatTime(dateStr) {\n  const d = new Date(dateStr);\n  return d.toISOString().split('T')[1].substring(0, 5);\n}\n\n// Helper: Format date nicely for display\nfunction formatDateDisplay(dateStr) {\n  const d = new Date(dateStr);\n  const date = d.toISOString().split('T')[0];\n  return date;\n}\n\nconst today = new Date();\nconst twoWeeksLater = new Date(today);\ntwoWeeksLater.setDate(today.getDate() + 14);\nconst dateRange = `${formatDate(today)} to ${formatDate(twoWeeksLater)}`;\n\nconst conflicts = JSON.parse(data.conflicts);\n\n// Group conflicts by person\nconst conflictsByPerson = {};\nconflicts.forEach(conflict => {\n  const key = conflict.person_email;\n  if (!conflictsByPerson[key]) {\n    conflictsByPerson[key] = {\n      name: conflict.person_name,\n      email: conflict.person_email,\n      holiday_start: conflict.booking_start,\n      holiday_end: conflict.booking_end,\n      booking_note: conflict.booking_note,\n      shifts: []\n    };\n  }\n  conflictsByPerson[key].shifts.push({\n    date: formatDateDisplay(conflict.schedule_start),\n    start: formatTime(conflict.schedule_start),\n    end: formatTime(conflict.schedule_end)\n  });\n});\n\nconst peopleWithConflicts = Object.values(conflictsByPerson);\n\n// Build formatted text message\nlet message = `:warning: *On-Call Holiday Conflicts Detected*\\n\\n`;\nmessage += `*Period:* ${dateRange}\\n`;\nmessage += `*${peopleWithConflicts.length} people* with conflicts across *${data.conflict_count} shifts*\\n`;\nmessage += `\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n\\n`;\n\npeopleWithConflicts.forEach((person, idx) => {\n  message += `*${idx + 1}. ${person.name}* (${person.email})\\n`;\n  message += `   :palm_tree: *Holiday:* ${person.holiday_start} to ${person.holiday_end}\\n`;\n  if (person.booking_note && person.booking_note !== 'No note') {\n    message += `   :memo: _${person.booking_note}_\\n`;\n  }\n  message += `   :phone: *Conflicting on-call shifts (${person.shifts.length}):*\\n`;\n  \n  person.shifts.forEach(shift => {\n    message += `      • ${shift.date}: ${shift.start} - ${shift.end}\\n`;\n  });\n  \n  message += `\\n`;\n});\n\nreturn [{\n  json: {\n    text: message\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        920,
+        144
+      ],
+      "id": "format-conflicts-message",
+      "name": "Format Conflicts Message"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C09KC27N83W",
+          "mode": "list",
+          "cachedResultName": "testtttt"
+        },
+        "text": "={{ $json.text }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        144
+      ],
+      "id": "dd20078d-7061-461c-92da-bb3ca207140e",
+      "name": "Send to Slack (Conflicts)",
+      "webhookId": "d56831d6-00bc-4182-b0da-d71e65227f96",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "BvLN27GNjWASeRsQ",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\n\n// Helper: Format date nicely\nfunction formatDate(dateStr) {\n  const d = new Date(dateStr);\n  return d.toISOString().split('T')[0];\n}\n\nconst today = new Date();\nconst twoWeeksLater = new Date(today);\ntwoWeeksLater.setDate(today.getDate() + 14);\nconst dateRange = `${formatDate(today)} to ${formatDate(twoWeeksLater)}`;\n\n// Build formatted text message\nlet message = `:white_check_mark: *On-Call Schedule Check Complete*\\n\\n`;\nmessage += `*Period:* ${dateRange}\\n`;\nmessage += `*People Checked:* ${data.people_checked}\\n\\n`;\nmessage += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n\\n`;\nmessage += `:tada: *No conflicts detected!*\\n`;\nmessage += `All on-call schedules are clear - no one is scheduled while on holiday.`;\n\nreturn [{\n  json: {\n    text: message\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        920,
+        464
+      ],
+      "id": "format-no-conflicts-message",
+      "name": "Format No Conflicts Message"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C09KC27N83W",
+          "mode": "list",
+          "cachedResultName": "testtttt"
+        },
+        "text": "={{ $json.text }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        464
+      ],
+      "id": "f1530bfc-d3d6-4507-9f30-e70f80896e4b",
+      "name": "Send to Slack (No Conflicts)",
+      "webhookId": "f23a21c4-7e37-4288-b6c0-fd7f951784e3",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "BvLN27GNjWASeRsQ",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "List bookings",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List schedules",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List schedules": {
+      "main": [
+        [
+          {
+            "node": "Split Schedules",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Schedules": {
+      "main": [
+        [
+          {
+            "node": "List schedule entries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List bookings": {
+      "main": [
+        [
+          {
+            "node": "Wait for All Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for All Data": {
+      "main": [
+        [
+          {
+            "node": "Detect Conflicts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detect Conflicts": {
+      "main": [
+        [
+          {
+            "node": "Has Conflicts?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Conflicts?": {
+      "main": [
+        [
+          {
+            "node": "Show Summary (With Conflicts)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Show Summary (No Conflicts)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List schedule entries": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Schedule Entries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Schedule Entries": {
+      "main": [
+        [
+          {
+            "node": "Wait for All Data",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Show Summary (With Conflicts)": {
+      "main": [
+        [
+          {
+            "node": "Format Conflicts Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Show Summary (No Conflicts)": {
+      "main": [
+        [
+          {
+            "node": "Format No Conflicts Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Conflicts Message": {
+      "main": [
+        [
+          {
+            "node": "Send to Slack (Conflicts)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format No Conflicts Message": {
+      "main": [
+        [
+          {
+            "node": "Send to Slack (No Conflicts)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a0a5fcda-0967-4b19-b7e3-5b1ea822152e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5ae08e81c1c4cbd678917e884ea4b9f729e5a7ac5e563399bab40ff74a3ec208"
+  },
+  "id": "mvPLNmu0qjFjDVld",
+  "tags": []
+}
